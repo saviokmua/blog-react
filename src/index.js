@@ -12,11 +12,9 @@ import {Provider} from 'react-redux'
 import reducers from 'reducers'
 import Posts from 'containers/posts'
 
-
 const store = createStore(reducers, composeWithDevTools(
   applyMiddleware(thunk)
 ))
-
 const history = syncHistoryWithStore(browserHistory, store)
 
 ReactDOM.render(
@@ -24,7 +22,6 @@ ReactDOM.render(
     <Router history={history}>
       <Route path='/' component={Posts}/>
     </Router>
-
   </Provider>,
   document.getElementById('root')
 );
